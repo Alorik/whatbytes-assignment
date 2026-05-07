@@ -41,7 +41,7 @@ export default function HomePage() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-8 flex gap-6">

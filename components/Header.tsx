@@ -13,7 +13,7 @@ export default function Header({ searchQuery, onSearchChange }: HeaderProps) {
   const { totalItems } = useCart();
 
   return (
-    <header className="bg-[#1a56db] text-white px-6 py-3 flex items-center gap-4">
+    <header className="bg-[#1a56db] text-white px-6 py-3 flex justify-between items-center gap-4">
       <Link href="/" className="text-2xl font-bold mr-4 whitespace-nowrap">
         Logo
       </Link>
