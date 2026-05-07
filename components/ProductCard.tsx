@@ -2,11 +2,11 @@
 
 import Link from 'next/link';
 import { Product } from '@/lib/products';
-import { useCartStore } from '@/lib/cartStore';
+import { useCart } from '@/context/CartContext';
 import StarRating from './StarRating';
 
 export default function ProductCard({ product }: { product: Product }) {
-  const addItem = useCartStore((s) => s.addItem);
+  const { addItem } = useCart();
 
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col">

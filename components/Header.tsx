@@ -2,7 +2,7 @@
 
 import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
-import { useCartStore } from '@/lib/cartStore';
+import { useCart } from '@/context/CartContext';
 
 interface HeaderProps {
   searchQuery: string;
@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 export default function Header({ searchQuery, onSearchChange }: HeaderProps) {
-  const totalItems = useCartStore((s) => s.totalItems());
+  const { totalItems } = useCart();
 
   return (
     <header className="bg-[#1a56db] text-white px-6 py-3 flex items-center gap-4">
