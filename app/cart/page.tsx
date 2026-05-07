@@ -1,25 +1,23 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Trash2 } from 'lucide-react';
-import { useCartStore } from '@/lib/cartStore';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from "react";
+import Link from "next/link";
+import { Trash2 } from "lucide-react";
+import { useCart } from "@/context/CartContext";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function CartPage() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const { items, removeItem, updateQuantity, totalPrice, totalItems } =
-    useCartStore();
+    useCart();
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
       <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-10">
-        <h1 className="text-2xl font-bold text-gray-900 mb-6">
-          Shopping Cart
-        </h1>
+        <h1 className="text-2xl font-bold text-gray-900 mb-6">Shopping Cart</h1>
 
         {items.length === 0 ? (
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-16 text-center">
@@ -73,7 +71,9 @@ export default function CartPage() {
                     <p className="text-gray-500 text-xs mt-0.5">
                       {item.category}
                     </p>
-                    <p className="font-bold text-gray-900 mt-1">${item.price}</p>
+                    <p className="font-bold text-gray-900 mt-1">
+                      ${item.price}
+                    </p>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
@@ -116,8 +116,8 @@ export default function CartPage() {
                 </h2>
                 <div className="space-y-2 text-sm mb-4">
                   <div className="flex justify-between text-gray-600">
-                    <span>Items ({totalItems()})</span>
-                    <span>${totalPrice()}</span>
+                    <span>Items ({totalItems})</span>
+                    <span>${totalPrice.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>Shipping</span>
@@ -126,7 +126,7 @@ export default function CartPage() {
                 </div>
                 <div className="border-t pt-4 flex justify-between font-bold text-gray-900">
                   <span>Total</span>
-                  <span>${totalPrice()}</span>
+                  <span>${totalPrice.toFixed(2)}</span>
                 </div>
                 <button className="mt-4 w-full bg-[#1a56db] hover:bg-[#1e40af] text-white font-bold py-3 rounded-xl transition-colors">
                   Checkout

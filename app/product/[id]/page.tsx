@@ -1,22 +1,23 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useParams, notFound } from 'next/navigation';
-import Link from 'next/link';
-import { products } from '@/lib/products';
-import { useCartStore } from '@/lib/cartStore';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import StarRating from '@/components/StarRating';
+import { useState } from "react";
+import { useParams } from "next/navigation";
+import Link from "next/link";
+import { products } from "@/lib/products";
+import Image from "next/image";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import {useCart} from "@/context/CartContext";
+import StarRating from "@/components/StarRating";
 
 export default function ProductPage() {
   const params = useParams();
   const id = Number(params.id);
   const product = products.find((p) => p.id === id);
 
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [quantity, setQuantity] = useState(1);
-  const addItem = useCartStore((s) => s.addItem);
+  const { addItem } = useCart();
 
   if (!product) {
     return (
@@ -59,7 +60,7 @@ export default function ProductPage() {
           <div className="flex flex-col md:flex-row">
             {/* Image */}
             <div className="md:w-1/2 bg-gray-100 flex items-center justify-center p-10 min-h-72">
-              <img
+              <Image
                 src={product.image}
                 alt={product.title}
                 className="max-h-80 w-full object-contain"

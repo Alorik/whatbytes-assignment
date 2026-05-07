@@ -4,7 +4,8 @@ import { categories } from '@/lib/products';
 export default function Footer() {
   return (
     <footer className="bg-[#1e3a8a] text-white mt-16 py-10 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-3 gap-0">
+        
         {/* Filters column */}
         <div>
           <h4 className="font-bold mb-3">Filters</h4>
@@ -16,7 +17,7 @@ export default function Footer() {
         </div>
 
         {/* About Us */}
-        <div>
+        <div className="justify-self-center">
           <h4 className="font-bold mb-3">About Us</h4>
           <ul className="space-y-2 text-sm text-blue-200">
             <li>
@@ -33,7 +34,7 @@ export default function Footer() {
         </div>
 
         {/* Follow Us */}
-        <div>
+        <div className="justify-self-end">
           <h4 className="font-bold mb-3">Follow Us</h4>
           <div className="flex gap-3">
             {/* Facebook */}
@@ -59,7 +60,13 @@ export default function Footer() {
               href="#"
               className="w-9 h-9 rounded-full bg-[#1a56db] flex items-center justify-center hover:bg-blue-500 transition-colors"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                 <circle cx="12" cy="12" r="4" />
                 <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
@@ -67,8 +74,10 @@ export default function Footer() {
             </a>
           </div>
         </div>
+
       </div>
 
+      {/* Bottom copyright bar */}
       <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-blue-800 text-sm text-blue-300">
         © 2024 American
       </div>
