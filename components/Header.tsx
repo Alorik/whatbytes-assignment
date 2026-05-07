@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { ShoppingCart } from 'lucide-react';
-import Link from 'next/link';
-import { useCart } from '@/context/CartContext';
+import { ShoppingCart } from "lucide-react";
+import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 
 interface HeaderProps {
   searchQuery: string;
@@ -69,4 +69,5 @@ export default function Header({ searchQuery, onSearchChange }: HeaderProps) {
         </div>
       </div>
     </header>
-  );}
+  );
+}
