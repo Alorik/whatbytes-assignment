@@ -15,7 +15,7 @@ export default function Sidebar({
   onCategoryChange,
   maxPrice,
   onMaxPriceChange,
-  storeName = "Cacyroy",
+  storeName = "Category",
 }: SidebarProps) {
   const priceOptions = [500, 1000, 2000, 5000, 10000];
 
