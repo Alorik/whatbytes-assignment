@@ -6,7 +6,7 @@ export default function StarRating({
   max?: number;
 }) {
   return (
-    //
+
     <div className="flex gap-0.5">
       {Array.from({ length: max }).map((_, i) => (
         <svg
