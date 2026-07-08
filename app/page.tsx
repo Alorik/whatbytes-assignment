@@ -1,10 +1,8 @@
-import Component from "../components/Component";
+
+import HomePage from "./HomePage";
 
 export default function Page() {
   return (
-
-
-    // 
-      <Component />
+<HomePage />
   );
 }
